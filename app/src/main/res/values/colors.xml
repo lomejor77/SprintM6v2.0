@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    //paleta personalizada para el proyecto
+    <color name="dark_primary">#0097A7</color>
+    <color name="light_primary">#B2EBF2</color>
+    <color name="primary_color">#00BCD4</color>
+    <color name="accent">#FF5252</color>
+    <color name="primary_text">#212121</color>
+    <color name="second_text">#757575</color>
+    <color name="divider_color">#BDBDBD</color>
+
+
+
 </resources>

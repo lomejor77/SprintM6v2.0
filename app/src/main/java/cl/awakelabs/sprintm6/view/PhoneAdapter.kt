@@ -1,11 +1,9 @@
-package cl.awakelabs.sprintm6.presentation
+package cl.awakelabs.sprintm6.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cl.awakelabs.sprintm6.data.local.PhoneEntity
-import cl.awakelabs.sprintm6.data.remote.Phone
-import cl.awakelabs.sprintm6.databinding.FragmentHomeBinding
 import cl.awakelabs.sprintm6.databinding.ItemPhoneBinding
 import coil.load
 

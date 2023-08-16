@@ -1,4 +1,4 @@
-package cl.awakelabs.sprintm6.presentation
+package cl.awakelabs.sprintm6.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import cl.awakelabs.sprintm6.R
 import cl.awakelabs.sprintm6.databinding.FragmentHomeBinding
 
 

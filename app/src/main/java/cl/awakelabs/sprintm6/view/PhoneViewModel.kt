@@ -1,4 +1,4 @@
-package cl.awakelabs.sprintm6.presentation
+package cl.awakelabs.sprintm6.view
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

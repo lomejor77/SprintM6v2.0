@@ -14,14 +14,14 @@ import kotlinx.coroutines.launch
 class PhoneViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: Repository
-    fun phonesLiveData() = repository.obtainPhonesEntity()
+
 
     init {
         val api = PhoneRetroFit.getRetroFitClient()
-        val phoneDataBase: PhoneDAO = PhoneDataBase.getDataBase(application).getPhoneDao()
+        val phoneDataBase = PhoneDataBase.getDataBase(application).getPhoneDao()
         repository = Repository(api, phoneDataBase)
     }
-
+    fun phonesLiveData() = repository.obtainPhonesEntity()
     fun getAllPhones() = viewModelScope.launch { repository.getPhones() }
     //fun phonesLiveData() = repository.obtainPhonesEntity()
     //fun idPhoneLiveData(id: String) = repository.obtainDetailEntity(id)

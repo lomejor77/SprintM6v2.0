@@ -12,6 +12,7 @@ import coil.load
 class PhoneAdapter: RecyclerView.Adapter<PhoneAdapter.ItemPhoneViewHolder>() {
     lateinit var binding: ItemPhoneBinding
     private val listItemPhones = mutableListOf<PhoneEntity>()
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

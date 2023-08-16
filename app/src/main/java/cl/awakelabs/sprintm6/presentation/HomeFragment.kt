@@ -30,7 +30,6 @@ class HomeFragment : Fragment() {
         viewModel.phonesLiveData().observe(viewLifecycleOwner) {
             adapter.setData(it)
         }
-
     }
 
 

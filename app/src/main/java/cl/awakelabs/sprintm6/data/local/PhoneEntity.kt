@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "tbl_phones")
 data class PhoneEntity(
     @PrimaryKey val id: String,
-    val name: Int,
+    val name: String,
     val price: Int,
     val image: String
 )

@@ -8,4 +8,7 @@
     <string name="textview">TextView</string>
     <string name="precio">precio</string>
     <string name="detalles_del_producto">Detalles del Producto</string>
+    <string name="name">name</string>
+    <string name="price">price</string>
+
 </resources>

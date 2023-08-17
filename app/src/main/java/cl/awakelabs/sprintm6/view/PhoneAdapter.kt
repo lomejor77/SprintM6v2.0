@@ -47,7 +47,7 @@ class PhoneAdapter: RecyclerView.Adapter<PhoneAdapter.ItemPhoneViewHolder>() {
 
             view.cardList.setOnClickListener {
                 val bundle = Bundle()
-                bundle.putString("id", phone.id)
+                bundle.putInt("id", phone.id.toInt())
                 Navigation.findNavController(view.root).navigate(R.id.action_homeFragment_to_detailFragment,bundle)
 
             }

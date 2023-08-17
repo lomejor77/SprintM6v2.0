@@ -9,16 +9,16 @@ import androidx.room.Query
 @Dao
 interface PhoneDAO {
    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPhone(phoneEntity: PhoneEntity)
+    suspend fun insertPhones(phoneEntity: List<PhoneEntity>)
 
     @Query("SELECT * FROM tbl_phones ORDER BY id ASC")
     fun getPhones(): LiveData<List<PhoneEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPhones(phoneEntity: List<PhoneEntity>)
+    suspend fun insertDetails(detailEntity: DetailEntity)
 
-    @Query("SELECT * FROM tbl_phones WHERE id = :id")
-    fun getPhoneDetail(id: String): LiveData<PhoneEntity>
+    @Query("SELECT * FROM tbl_details WHERE id LIKE :id")
+    fun getPhoneDetail(id: Int): LiveData<DetailEntity>
 
 
 

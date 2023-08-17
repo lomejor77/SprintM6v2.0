@@ -10,7 +10,7 @@ import cl.awakelabs.sprintm6.data.remote.PhoneAPI
 class Repository(private val phoneAPI: PhoneAPI, private val phoneDAO: PhoneDAO) {
 
     fun obtainPhonesEntity(): LiveData<List<PhoneEntity>> = phoneDAO.getPhones()
-    //fun obtainDetailEntity(id: String): LiveData<List<PhoneDetailEntity>> = phoneDAO.getPhoneDetail()
+    fun obtainIdPhone(id: String): LiveData<PhoneEntity> = phoneDAO.getPhoneDetail(id)
     suspend fun getPhones(){
         val response = phoneAPI.getDatas()
         if (response.isSuccessful) {
@@ -24,5 +24,6 @@ class Repository(private val phoneAPI: PhoneAPI, private val phoneDAO: PhoneDAO)
         }
 
     }
+   // fun obtainIdPhone(id: String): LiveData<PhoneEntity> = phoneDAO.getPhoneDetail(id)
+    fun Phone.transform(): PhoneEntity = PhoneEntity(this.id, this.name, this.price, this.image)
 }
-fun Phone.transform(): PhoneEntity = PhoneEntity(this.id, this.name, this.price, this.image)

@@ -1,8 +1,11 @@
 package cl.awakelabs.sprintm6.view
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import cl.awakelabs.sprintm6.R
 import cl.awakelabs.sprintm6.data.local.PhoneEntity
 import cl.awakelabs.sprintm6.databinding.ItemPhoneBinding
 import coil.load
@@ -41,6 +44,13 @@ class PhoneAdapter: RecyclerView.Adapter<PhoneAdapter.ItemPhoneViewHolder>() {
             view.textName.text = phone.name.toString()
             view.textPrice.text = phone.price.toString()
             view.textId.text = phone.id.toInt().toString()
+
+            view.cardList.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putString("id", phone.id)
+                Navigation.findNavController(view.root).navigate(R.id.action_homeFragment_to_detailFragment,bundle)
+
+            }
         }
 
     }

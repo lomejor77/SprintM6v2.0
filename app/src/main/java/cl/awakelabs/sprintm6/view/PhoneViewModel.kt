@@ -21,5 +21,5 @@ class PhoneViewModel(application: Application) : AndroidViewModel(application) {
     fun phonesLiveData() = repository.obtainPhonesEntity()
     fun getAllPhones() = viewModelScope.launch { repository.getPhones() }
     //fun phonesLiveData() = repository.obtainPhonesEntity()
-    //fun idPhoneLiveData(id: String) = repository.obtainDetailEntity(id)
+    fun idPhoneLiveData(id: String) = repository.obtainIdPhone(id)
 }

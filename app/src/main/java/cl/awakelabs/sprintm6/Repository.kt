@@ -45,7 +45,7 @@ class Repository(private val phoneAPI: PhoneAPI, private val phoneDAO: PhoneDAO)
         }
     }
 
-
+   //linea 49: esta funcion se envia a un archivo mapper para generar test unitario
   //  fun Phone.transform(): PhoneEntity = PhoneEntity(this.id, this.name, this.price, this.image)
     fun Detail.transformToDetail(): DetailEntity = DetailEntity(this.id, this.name, this.price,
         this.image, this.description, this.lastPrice, this.credit)

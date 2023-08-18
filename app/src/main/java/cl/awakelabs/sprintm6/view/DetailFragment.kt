@@ -34,6 +34,7 @@ class DetailFragment : Fragment() {
         phoneViewModel.getDetails(selectId)
 
         loadDetails()
+        sendMail()//funcion para enviar email Linea 62
         return binding.root
     }
 
@@ -53,18 +54,18 @@ class DetailFragment : Fragment() {
                 }
 
                 binding.textCredits.text = creditValue
+
             }
-            /*binding.btnMail.setOnClickListener {
-                val email = "miemail@gmail.com"
-                val intentEmail = Intent(Intent.ACTION_SEND, Uri.parse(email))
-                intentEmail.type = "plain/text"
-                intentEmail.putExtra(Intent.EXTRA_SUBJECT, "Titulo del mail")
-                intentEmail.putExtra(Intent.EXTRA_TEXT, "Hola, estoy esperando respuesta..")
-                intentEmail.putExtra(Intent.EXTRA_EMAIL, arrayOf("correo@gmail.com", "otrocorreo@gmail.com"))
-                startActivity(Intent.createChooser(intentEmail, "Elige cliente de correo"))
-            }*/
 
         }
+    }
+    private fun sendMail() {
+        binding.btnMail.setOnClickListener {
+            phoneViewModel.detailLiveData(selectId).observe(viewLifecycleOwner) {
+                phoneViewModel.sendEmail(requireContext(), it.name, selectId)
+            }
+        }
+
     }
 
 }

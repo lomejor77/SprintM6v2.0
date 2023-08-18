@@ -12,7 +12,8 @@ import cl.awakelabs.sprintm6.data.remote.PhoneAPI
 class Repository(private val phoneAPI: PhoneAPI, private val phoneDAO: PhoneDAO) {
 
     fun obtainPhonesEntity(): LiveData<List<PhoneEntity>> = phoneDAO.getPhones()
-   //suspend fun
+
+    //idPhoneDetail lo utizo en el viewmodel
     fun idPhoneDetail(id: Int): LiveData<DetailEntity> = phoneDAO.getPhoneDetail(id)
     suspend fun getPhones(){
         val response = phoneAPI.getDatas()
